@@ -1,6 +1,9 @@
 .chat-container {
   display: flex;
   flex-direction: column;
+  width: 100%; /* Ensure container uses full width */
+  align-items: center; /* Center messages for larger screens */
+  padding: 0 10px; /* Padding for smaller screens */
 }
 
 .message {
@@ -8,74 +11,72 @@
   padding: 10px;
   margin-bottom: 10px;
   max-width: 80%;
+  width: 100%; /* Full width messages on smaller screens */
+  box-sizing: border-box; /* Include padding and border in the width */
 }
 
+/* Responsive font sizes */
 @media only screen and (max-width: 600px) {
   .message {
     font-size: 16px;
   }
 }
 
+.msgA, .msgB {
+  font-family: Calibri, Arial, sans-serif;
+  background-repeat: no-repeat;
+  background-position: left top;  
+}
+
 .msgA {
   background-color: #FFF2CC;
   align-self: flex-start;
   background-image: url('tb.gif');
-  background-repeat: no-repeat;
-  background-position: left top;  
-  font-family: Calibri, Arial, sans-serif;
 }
 
 .msgB {
   background-color: #e6e6e6;
   align-self: flex-end;
   background-image: url('pi.gif');
-  background-repeat: no-repeat;
-  background-position: left top;  
-  font-family: Calibri, Arial, sans-serif;
 }
 
 .msgBHtml {
   background-color: #000000;
-  font-family: Courier New, Arial, sans-serif;
   color: #FFFFFF;
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 10px;
   max-width: 80%;
   align-self: flex-end;
-  width: auto;
   display: inline-block;
   min-width: 200px;
+  font-family: Courier New, Arial, sans-serif;
 }
 
-
-/* Styles for desktop devices */
+/* Desktop styles */
 @media screen and (min-width: 768px) {
    .header {
-   background-color: #333;
-   color: #fff;
-   padding: 20px;
-   text-align: center;
-   font-size: 24px;
-   font-weight: bold;
-   font-family: Calibri, Arial, sans-serif;
+     background-color: #333;
+     color: #fff;
+     padding: 20px;
+     text-align: center;
+     font-size: 24px;
+     font-weight: bold;
    }
 }
 
-/* Styles for mobile devices */
+/* Mobile styles */
 @media screen and (max-width: 767px) {
    .header {
-   background-color: #333;
-   color: #fff;
-   padding: 10px;
-   text-align: center;
-   font-size: 18px;
-   font-weight: bold;
-   font-family: Calibri, Arial, sans-serif;
+     padding: 10px;
+     font-size: 18px;
    }
 
    .msgBHtml {
-      font-size: 14px;
+     font-size: 14px;
    }
-   
+
+   .chat-container {
+     align-items: flex-start; /* Align messages to the start on smaller screens */
+   }
 }
