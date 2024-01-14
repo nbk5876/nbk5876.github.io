@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Image Generator</title>
+</head>
+<body>
+    <h1>AI Image Generator</h1>
+    <input type="text" id="imageDescription" placeholder="Describe the image...">
+    <button onclick="requestImage()">Generate Image ZZ</button>
+    <div id="imageDisplayArea"></div>
+
+    <script>
+        async function requestImage() {
+            var description = document.getElementById('imageDescription').value;
+            var displayArea = document.getElementById('imageDisplayArea');
+
+            try {
+                const response = await fetch('https://api.openai.com/v1/images/generations', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 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' 
+                    },
+                    body: JSON.stringify({
+                        prompt: description,
+                        n: 1 // Number of images to generate
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                // Assuming the API returns the URL of the generated image
+                if (data.data && data.data.length > 0) {
+                    displayArea.innerHTML = `<img src="${data.data[0].url}" alt="Generated Image">`;
+                } else {
+                    throw new Error('No image returned from the API');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                displayArea.innerText = 'Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
+
