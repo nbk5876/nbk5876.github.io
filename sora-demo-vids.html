@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- --------------------------------- -->
+<!-- Filename: sora-demo-vids.html     -->
+<!-- --------------------------------- -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sora</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f0f0f0;
+  }
+  .container {
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  .container:hover {
+    transform: scale(1.05);
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  @media (max-width: 600px) {
+    .container {
+      width: 90%;
+    }
+  }
+  @media (min-width: 601px) {
+    .container {
+      width: calc(50% - 40px);
+    }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      width: calc(33.333% - 40px);
+    }
+  }
+</style>
+</head>
+<body>
+
+<a href="https://openai.com/sora?video=monster-with-melting-candle" class="container">
+  <img src="image/sora-monster-candle.png" alt="Monster with Melting Candle">
+</a>
+
+<a href="https://openai.com/sora?video=big-sur" class="container">
+  <img src="image/sora-big-sur.png" alt="Big Sur">
+</a>
+
+<a href="https://openai.com/sora?video=origami-undersea" class="container">
+  <img src="image/sora-origami.png" alt="Origami Undersea">
+</a>
+
+<a href="https://openai.com/sora?video=ships-in-coffee" class="container">
+  <img src="image/sora-ships-coffee.png" alt="Ships in Coffee">
+</a>
+
+<a href="https://openai.com/sora?video=man-on-the-cloud" class="container">
+  <img src="image/sora-man-cloud.png" alt="Man on the Cloud">
+</a>
+
+</body>
+</html>
