@@ -1,7 +1,6 @@
 print("Running openai-test.py")
 from openai import OpenAI
 client = OpenAI()
-#client = openai()
 
 completion = client.chat.completions.create(
   model="gpt-3.5-turbo",
