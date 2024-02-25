@@ -1,18 +1,19 @@
+#------------------------------------------------------------
 # test_openai_v3.py
+# Purpose: Use this script to test that the environment 
+# is connecting to OpenAI and an API is successfully invoked
+#------------------------------------------------------------
 import os
 import openai
 
 print("####################################")
-print("Running: test_openai_v2.py")
+print("Running: test_openai_v3.py")
 
 # Retrieve the API key from the environment variable
-api_key = os.getenv("OPENAI_API_KEY")
-if api_key is None:
+openai.api_key = os.getenv("OPENAI_API_KEY")
+if openai.api_key is None:
     print("Error: OPENAI_API_KEY environment variable not set.")
     exit()
-
-# Explicitly set the API key for OpenAI
-openai.api_key = api_key
 
 try:
     # Create a chat completion request using the direct openai function call
@@ -25,6 +26,6 @@ try:
     )
 
     # Print the completion result
-    print(completion.choices[0].message['content'])
+    print(completion['choices'][0]['message']['content'])
 except Exception as e:
     print(f"An error occurred: {e}")
