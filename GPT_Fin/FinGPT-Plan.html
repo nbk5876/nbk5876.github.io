@@ -16,7 +16,7 @@
 	<li><strong>Feature Development:</strong> Identify the key features that would be most valuable for stock market analysis. This could include trend prediction, sentiment analysis of market news, generating summaries of financial reports, etc.
 
 	</li>
-	<ol>
+	<ol type="a">
 	<li>Feature 1: Natural language input will be used to direct the 
 	application. Utilizing natural language input allows users to interact with the application in a conversational manner, making it more accessible and user-friendly.</li>
 	<li>Feature 2: The application will use GPT-3 or GPT-4 LLM. The decision to use GPT-3 or GPT-4 underscores a commitment to leveraging state-of-the-art language models for generating insights, which should enhance the quality and relevance of the analyses provided</li>
@@ -24,6 +24,15 @@
 		web when needed to read stock anaysis stored in public databases and in 
 		corporate web sites. Enabling the application to query the internet and access public databases and corporate websites for stock analysis ensures that FinGPT can provide up-to-date information and comprehensive market insights.</li>
 	</ol>
+	<li><strong>Requirements:</strong> </li>
+
+<ol type="a">
+  <li>Req 1: <strong>Parse the Input Query</strong>: Given the following NLP input, query the internet for an answer:&nbsp; 
+  For example, "What is the price to earning ration for Microsoft?"</li>
+  <li>Req 2: <strong>Intent Recognition</strong>: Recognize the intent behind the query, which is to find financial ratios for a specific company.</li>
+  <li>Req 3</li>
+</ol>
+
 	<li><strong>Dataset Preparation:</strong> Collect and curate datasets relevant to your features. For equity analysis, this could include historical price data, financial statements, analyst ratings, and more.
 
 	</li>
@@ -46,6 +55,30 @@
 	<li><strong>Compliance and Ethics:</strong> Stay informed about financial regulations and ethical guidelines to ensure that FinGPT complies with all legal requirements, especially if it provides or could be interpreted as providing investment advice.
 	</li>
 </ol>
+
+
+<h1>FinGPT Prototype Flow:</h1>
+
+<p>Here's an overview of the updated prototype steps:
+
+</p>
+<ul>
+	<li>Get NLP query text from user: The user inputs a natural language query about financial information.
+	</li>
+	<li>Fetch current data from Web: The system retrieves the latest financial data from the internet using APIs or scraping techniques.
+
+	</li>
+	<li>(Optional) Lightweight local data caching: An optional step where the system may cache the retrieved data locally to improve performance and reduce the need for repeated data fetching.
+
+	</li>
+	<li>Resolve NLP query using OpenAI API: The system sends the user's query and the retrieved financial data to the OpenAI API, which processes the query using the GPT LLM model.
+
+	</li>
+	<li>Send results back to the user: Finally, the system presents the OpenAI API's response to the user.
+	</li>
+</ul>
+
+<img src="image/FinGpt-Prototype-Flow-Diagram.png" alt="Description of the image" height="546" width="694">
 
 
 </body>
