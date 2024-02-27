@@ -1,33 +1,45 @@
+#------------------------------------------------------------
 # nlp_processor.py
+# Purpose:  The primary purpose of this script is to interpret 
+#           user queries, extract relevant financial terms and 
+#           concepts, and prepare them for processing to 
+#           retrieve or calculate the requested financial data.
+#------------------------------------------------------------
+from openai import OpenAI
 
-import openai
-from config import OPENAI_API_KEY
-
-openai.api_key = OPENAI_API_KEY
-client = openai.OpenAI()
-
-def process_query(user_message):
+def process_query(user_query, structured_data):
     """
-    Process the natural language query using OpenAI's GPT-4 model.
+    Processes the user's financial query using OpenAI's API.
 
-    :param user_message: The user's natural language query.
-    :return: A response from the GPT-4 model that answers the user's query.
+    :param user_query: The user's query as a string.
+    :param structured_data: The structured data related to the financial query.
+    :return: The processed response from OpenAI.
     """
+    # Initialize the OpenAI client
+    client = OpenAI()
+    
+    print("Running process_query()")
+    print(user_query)
+    print(structured_data)
+
+    # Here, adapt the messages to fit the context of your application.
+    # For a financial query, you might want to include the structured_data in some way,
+    # or just pass the query directly if the structured_data isn't needed here.
+    completion = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "Provide a detailed analysis of the following financial information:"},
+            {"role": "user", "content": user_query}
+            # If you have structured data to include, you might add another message here
+            # {"role": "system", "content": structured_data}  # This line is just an example
+        ]
+    )
+
+    # Assuming the response structure matches your test case,
+    # adjust if the actual response format differs.
     try:
-        completion = client.chat.completions.create(
-            model="gpt-4",
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": user_message}
-            ]
-        )
+        response = completion.choices[0].message  # Adjust based on actual response structure
+    except IndexError:
+        response = "An error occurred processing the query."
 
-        return completion.choices[0].message.content
-    except openai.error.OpenAIError as e:
-        print(f"Error processing the NLP query: {e}")
-        return "I'm sorry, I couldn't process your query."
-
-# Example usage
-if __name__ == "__main__":
-    user_input = "Translate the following English text to French: 'Hello, world!'"
-    print(process_query(user_input))
+    return response

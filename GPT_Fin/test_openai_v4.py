@@ -2,6 +2,8 @@
 # test_openai_v4.py
 # Purpose: Use this script to test that the environment 
 # is connecting to OpenAI and an API is successfully invoked
+# Version Note: 
+
 #------------------------------------------------------------
 print("Running openai-test.py")
 from openai import OpenAI

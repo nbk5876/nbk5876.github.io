@@ -1,5 +1,9 @@
+#------------------------------------------------------------
 # data_structurer.py
-
+# Purpose: This script standardizes the data format, making 
+#          it uniform and ready for further analysis or 
+#          for feeding into financial models
+#------------------------------------------------------------
 from utils import log_error
 
 def structure_data(raw_data):
