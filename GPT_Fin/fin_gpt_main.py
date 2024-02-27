@@ -2,8 +2,10 @@
 # fin_gpt_main.py
 # Purpose: This is the main script of the FinGPT prototype
 #          which is intended to assist in the analysis of 
-#          stock market equities
+#          stock market equities. 
 # Author: T Byorick 2024
+# Github link: https://github.com/nbk5876/nbk5876.github.io/tree/5a834f96a425480fac90fa20f881f9dfdc9199cf/GPT_Fin
+# Overview: https://aiseattle.chat/FinGPT
 #------------------------------------------------------------
 print("Running fin_gpt_main.py")
 from data_fetcher import fetch_financial_data
