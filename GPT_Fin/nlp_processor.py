@@ -26,7 +26,8 @@ def process_query(user_query, structured_data):
     # For a financial query, you might want to include the structured_data in some way,
     # or just pass the query directly if the structured_data isn't needed here.
     completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        #model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=[
             {"role": "system", "content": "Provide a detailed analysis of the following financial information:"},
             {"role": "user", "content": user_query}
