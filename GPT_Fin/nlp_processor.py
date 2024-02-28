@@ -22,17 +22,29 @@ def process_query(user_query, structured_data):
     print(user_query)
     print(structured_data)
 
+    # Extract the Price-to-Earnings ratio from the structured data
+    pe_ratio = structured_data.get('PERatio', 'N/A')
+    market_capitalization = structured_data.get('MarketCapitalization', 'N/A')
+
+
+    print(f"Price to Earnings ratio is {pe_ratio} for {structured_data.get('Name')}")
+
+    # Format a message that includes the P/E ratio information from Alpha Vantage
+    detailed_description = (
+        f"According to Alpha Vantage, the current Price-to-Earnings ratio for {structured_data.get('Name')} is {pe_ratio}. The MarketCapitalization is {market_capitalization}."
+        "Can you provide a financial analysis based on this P/E ratio?"
+    )
+
+    print(f"\nDetailed Description:\n {detailed_description} ")
+
     # Here, adapt the messages to fit the context of your application.
     # For a financial query, you might want to include the structured_data in some way,
     # or just pass the query directly if the structured_data isn't needed here.
     completion = client.chat.completions.create(
-        #model="gpt-3.5-turbo",
         model="gpt-4",
         messages=[
-            {"role": "system", "content": "Provide a detailed analysis of the following financial information:"},
-            {"role": "user", "content": user_query}
-            # If you have structured data to include, you might add another message here
-            # {"role": "system", "content": structured_data}  # This line is just an example
+            {"role": "system", "content": "You are an AI that provides financial analysis."},
+            {"role": "user", "content": detailed_description}
         ]
     )
 

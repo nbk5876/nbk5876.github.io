@@ -7,6 +7,8 @@
 # Github link: https://github.com/nbk5876/nbk5876.github.io/tree/5a834f96a425480fac90fa20f881f9dfdc9199cf/GPT_Fin
 # Overview: https://aiseattle.chat/FinGPT
 #------------------------------------------------------------
+import os
+os.system('cls' if os.name == 'nt' else 'clear')
 print("Running fin_gpt_main.py")
 from data_fetcher import fetch_financial_data
 from data_structurer import structure_data

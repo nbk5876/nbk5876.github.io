@@ -10,7 +10,7 @@ import json
 
 def fetch_financial_data(query):
     print("Running fetch_financial_data")
-    FINAGE_API_KEY = os.getenv('FINAGE_API_KEY')
+    ALPHAVANTAGE_API_KEY = os.getenv('ALPHAVANTAGE_API_KEY')
 
     """
     Fetch financial data based on the user's query.
@@ -20,8 +20,12 @@ def fetch_financial_data(query):
     :return: Raw financial data from the web.
     """
     # Example implementation using an API
-    api_url = f"https://api.finage.co.uk/last/stock/NVDA?apikey={FINAGE_API_KEY}"
-    print(f"Finage URL is {api_url}")
+    #api_url = f"https://api.finage.co.uk/last/stock/MSFT?apikey={FINAGE_API_KEY}"
+    #api_url = f"https://api.finage.co.uk/stock/price-earnings?symbol=MSFT&apikey={FINAGE_API_KEY}"
+    api_url = f"https://www.alphavantage.co/query?function=OVERVIEW&symbol=MSFT&apikey={ALPHAVANTAGE_API_KEY}"
+
+    print(f"FINFETCH URL is: {api_url}")
+
     try:
         response = requests.get(api_url, params={'query': query})
         response.raise_for_status()
