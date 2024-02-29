@@ -24,8 +24,10 @@ def main():
 
     print(user_query)
 
-    company_overview_data = fetch_financial_data('MSFT')  # Contains P/E ratio, Market Cap, etc.
-    current_stock_price = fetch_current_stock_price('MSFT')  # Contains the current stock price
+    symbol = 'NTAP'
+    symbol = 'BA'
+    company_overview_data = fetch_financial_data(symbol)  # Contains P/E ratio, Market Cap, etc.
+    current_stock_price = fetch_current_stock_price(symbol)  # Contains the current stock price
 
     # Combine both data sets into structured_data
     structured_data = {
@@ -42,7 +44,7 @@ def main():
     #else:
     #    response = cached_data
     
-    print(response)
+    print(f"\n{response}")
 
 if __name__ == "__main__":
     main()

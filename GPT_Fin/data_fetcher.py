@@ -22,7 +22,7 @@ def fetch_financial_data(query):
     -------------------------------------------------------------
     """
     # Example implementation using an API
-    api_url = f"https://www.alphavantage.co/query?function=OVERVIEW&symbol=MSFT&apikey={ALPHAVANTAGE_API_KEY}"
+    api_url = f"https://www.alphavantage.co/query?function=OVERVIEW&symbol={query}&apikey={ALPHAVANTAGE_API_KEY}"
 
     print(f"FINANCIAL FETCH URL is: {api_url}")
 

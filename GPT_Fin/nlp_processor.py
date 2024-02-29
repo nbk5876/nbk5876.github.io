@@ -26,6 +26,9 @@ def process_query(user_query, structured_data):
     company_name = structured_data["overview"].get("Name")
     pe_ratio = structured_data["overview"].get("PERatio")
     market_cap = structured_data["overview"].get("MarketCapitalization")
+    target_price = structured_data["overview"].get("AnalystTargetPrice")
+    profit_margin = structured_data["overview"].get("ProfitMargin")
+
     current_price = structured_data["currentPrice"]
 
     print(f"Price to Earnings ratio is {pe_ratio} for {structured_data.get('Name')}")
@@ -41,12 +44,11 @@ def process_query(user_query, structured_data):
     """
 
     # Format a message that includes the P/E ratio information from Alpha Vantage
-    detailed_description = (
-        f"According to Alpha Vantage, the current Price-to-Earnings ratio for {company_name} is {pe_ratio}. The MarketCapitalization is {market_cap}. The current stock price is {current_price}. "
-        "Can you provide a financial analysis based on this P/E ratio?"
+    detailed_description = (f"According to Alpha Vantage, the current Price-to-Earnings ratio for {company_name} is {pe_ratio}. Profit Margin is {profit_margin}. Market Capitalization is {market_cap}. The current stock price is {current_price} and the target price is {target_price}. "
+        "Can you provide a financial analysis based on these data points? Are there areas where the company is struggling?"
     )
 
-    print(f"\nDetailed Description:\n {detailed_description} ")
+    print(f"\nEnriched User Query:\n{detailed_description} ")
 
     # Here, adapt the messages to fit the context of your application.
     # For a financial query, you might want to include the structured_data in some way,
