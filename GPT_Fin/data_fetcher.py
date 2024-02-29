@@ -13,12 +13,13 @@ def fetch_financial_data(query):
     print("Running fetch_financial_data")
     ALPHAVANTAGE_API_KEY = os.getenv('ALPHAVANTAGE_API_KEY')
 
-    """
+    """ --------------------------------------------------------
     Fetch financial data based on the user's query.
     This can be implemented using an API or web scraping methods.
     
     :param query: The user's financial query.
     :return: Raw financial data from the web.
+    -------------------------------------------------------------
     """
     # Example implementation using an API
     api_url = f"https://www.alphavantage.co/query?function=OVERVIEW&symbol=MSFT&apikey={ALPHAVANTAGE_API_KEY}"

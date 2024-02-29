@@ -30,13 +30,14 @@ def process_query(user_query, structured_data):
 
     print(f"Price to Earnings ratio is {pe_ratio} for {structured_data.get('Name')}")
 
-    """
-    Next Steps:
+    """ --------------------------------------------------------------------------
+    Next Steps: (Done Feb 28)
     - Need to implement some method to use the return values of two separate 
       API's to obtain financial information
       about a company.  The pe_ratio and market_capitalization values are returned by 
       query?function=OVERVIEW&symbol=MSFT and current stock price is returned by
       query?function=GLOBAL_QUOTE
+      -----------------------------------------------------------------------------
     """
 
     # Format a message that includes the P/E ratio information from Alpha Vantage
