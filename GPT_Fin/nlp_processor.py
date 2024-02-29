@@ -22,16 +22,26 @@ def process_query(user_query, structured_data):
     print(user_query)
     print(structured_data)
 
-    # Extract the Price-to-Earnings ratio from the structured data
-    pe_ratio = structured_data.get('PERatio', 'N/A')
-    market_capitalization = structured_data.get('MarketCapitalization', 'N/A')
-
+    # Extract required information from structured_data
+    company_name = structured_data["overview"].get("Name")
+    pe_ratio = structured_data["overview"].get("PERatio")
+    market_cap = structured_data["overview"].get("MarketCapitalization")
+    current_price = structured_data["currentPrice"]
 
     print(f"Price to Earnings ratio is {pe_ratio} for {structured_data.get('Name')}")
 
+    """
+    Next Steps:
+    - Need to implement some method to use the return values of two separate 
+      API's to obtain financial information
+      about a company.  The pe_ratio and market_capitalization values are returned by 
+      query?function=OVERVIEW&symbol=MSFT and current stock price is returned by
+      query?function=GLOBAL_QUOTE
+    """
+
     # Format a message that includes the P/E ratio information from Alpha Vantage
     detailed_description = (
-        f"According to Alpha Vantage, the current Price-to-Earnings ratio for {structured_data.get('Name')} is {pe_ratio}. The MarketCapitalization is {market_capitalization}."
+        f"According to Alpha Vantage, the current Price-to-Earnings ratio for {company_name} is {pe_ratio}. The MarketCapitalization is {market_cap}. The current stock price is {current_price}. "
         "Can you provide a financial analysis based on this P/E ratio?"
     )
 

@@ -11,6 +11,7 @@ import os
 os.system('cls' if os.name == 'nt' else 'clear')
 print("Running fin_gpt_main.py")
 from data_fetcher import fetch_financial_data
+from data_fetcher import fetch_current_stock_price
 from data_structurer import structure_data
 from nlp_processor import process_query
 from cache_manager import CacheManager
@@ -18,12 +19,19 @@ import utils
 
 def main():
     #user_query = input("Enter your financial query: ")
-    user_query = "What is the Price-to-Earnings ratio for Microsoft?"
+    #user_query = "What is the Price-to-Earnings ratio for Microsoft?"
+    user_query = "MSFT"
+
     print(user_query)
 
-    data = fetch_financial_data(user_query)
+    company_overview_data = fetch_financial_data('MSFT')  # Contains P/E ratio, Market Cap, etc.
+    current_stock_price = fetch_current_stock_price('MSFT')  # Contains the current stock price
 
-    structured_data = structure_data(data)
+    # Combine both data sets into structured_data
+    structured_data = {
+        "overview": company_overview_data,
+        "currentPrice": current_stock_price
+    }
 
     #cache_manager = CacheManager()
     #cached_data = cache_manager.get_cached_data(structured_data)
