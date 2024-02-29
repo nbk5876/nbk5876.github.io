@@ -9,6 +9,41 @@
 
 <body>
 
+
+
+<h1>FinGPT Prototype</h1>
+
+<p>The prototype accept a query and returns finacial information about an 
+equity. Here's an overview of 5 processing steps:
+
+</p>
+<ul>
+	<li>Step 1 - Get natural language query from the user. For example, "What is the 
+	Price-to-Earnings ratio for Microsoft?" 	</li>
+	<li>Step 2- Fetch current financial data from the Web: The system retrieves the latest data from the internet using APIs or scraping techniques.
+
+	</li>
+	<li>Step 3- Data structuring and, optional, lightweight local data caching: 
+	This is an optional step where the system may cache the retrieved data locally to improve performance and reduce the need for repeated data fetching. 
+	Maybe implement this in a later phase.
+
+	</li>
+	<li>Step 4 - Resolve NLP (natural language processing) query using OpenAI API's:&nbsp; The system sends the user's query 
+	together with retrieved financial data to the OpenAI API, which processes the query using the GPT LLM model.
+
+	</li>
+	<li>Step 5 - Send results back to the user: Finally, the system presents the OpenAI API's response 
+	back to the user.
+	</li>
+</ul>
+
+<img src="image/FinGpt-Prototype-Flow-Diagram.png" alt="Description of the image">
+
+
+<h1><a href="https://github.com/nbk5876/nbk5876.github.io/tree/main/GPT_Fin">
+Github Project Folder</a></h1>
+
+
 <h1>FinGPT Dev Plan</h1>
 <ol>
 	<li><strong>Technical Environment Setup: </strong>Configure local PC desktop 
@@ -55,31 +90,6 @@
 	<li><strong>Compliance and Ethics:</strong> Stay informed about financial regulations and ethical guidelines to ensure that FinGPT complies with all legal requirements, especially if it provides or could be interpreted as providing investment advice.
 	</li>
 </ol>
-
-
-<h1>FinGPT Prototype Flow</h1>
-
-<p>Here's an overview of the updated prototype steps:
-
-</p>
-<ul>
-	<li>Get natural language query from the user. Example What is the 
-	Price-to-Earnings ratio for Microsoft?
-	</li>
-	<li>Fetch current data from Web: The system retrieves the latest financial data from the internet using APIs or scraping techniques.
-
-	</li>
-	<li>(Optional) Lightweight local data caching: An optional step where the system may cache the retrieved data locally to improve performance and reduce the need for repeated data fetching.
-
-	</li>
-	<li>Resolve NLP query using OpenAI API: The system sends the user's query and the retrieved financial data to the OpenAI API, which processes the query using the GPT LLM model.
-
-	</li>
-	<li>Send results back to the user: Finally, the system presents the OpenAI API's response to the user.
-	</li>
-</ul>
-
-<img src="image/FinGpt-Prototype-Flow-Diagram.png" alt="Description of the image">
 
 
 </body>
