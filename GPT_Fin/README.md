@@ -1,7 +1,7 @@
 # Sample README.md for GitHub Repository
 
 ## Project Title
-A prototype Python&GPT-4 application to accept a query and returns finacial information about an equity.
+A prototype Python&GPT-4 application to accept a query and returns financial information about an equity.
 
 ## Table of Contents
 - Installation
