@@ -1,4 +1,4 @@
-# Sample README.md for GitHub Repository
+# README.md for FinGPT GitHub Repository
 
 ## Project Title
 FinGPT is a small Python application leveraging OpenAI's GPT-4 to provide financial analysis and stock market information. By entering the symbol for equity, e.g. MSFT, etc users receive detailed insights, including market analysis, historical performance, and predictive trends. The application is intended as a prototype to learn how ChatGPT can be integrated with stock market data using application programing interfaces (APIs) 
