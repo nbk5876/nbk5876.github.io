@@ -1,7 +1,7 @@
 # README.md for FinGPT GitHub Repository
 
 ## Project Title
-FinGPT is a small Python application leveraging OpenAI's GPT-4 to provide financial analysis and stock market information. By entering the symbol for equity, e.g. MSFT, etc users receive detailed insights, including market analysis, historical performance, and predictive trends. The application is intended as a prototype to learn how ChatGPT can be integrated with stock market data using application programing interfaces (APIs) 
+FinGPT is a small Python application leveraging OpenAI's GPT-4 to provide financial analysis and stock market information. By entering the symbol for an equity, e.g. MSFT, AAPL etc, users receive detailed insights, including market analysis, historical performance, and predictive trends. The application is intended as a prototype to learn how ChatGPT can be integrated with stock market data using application programing interfaces (APIs) 
 
 ## Table of Contents
 - Installation
@@ -12,17 +12,17 @@ FinGPT is a small Python application leveraging OpenAI's GPT-4 to provide financ
 ## Installation
 Before installation, ensure you have Python (version 3.8 or newer) installed on your system.
 
-Clone the Repository
+**Clone the Repository**
 
 git clone https://github.com/yourusername/FinGPT.git
 cd FinGPT
 
-Setup a Virtual Environment
+**Setup a Virtual Environment**
 
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
-Install Dependancies
+**Install Dependancies**
 
 pip install -r requirements.txt
 
