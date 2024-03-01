@@ -1,7 +1,7 @@
 # README.md for FinGPT GitHub Repository
 
 ## Project Title
-FinGPT is a small Python application leveraging OpenAI's GPT-4 to provide financial analysis and stock market information. By entering the symbol for an equity, e.g. MSFT, AAPL etc, users receive detailed insights, including market analysis, historical performance, and predictive trends. The application is intended as a prototype to learn how ChatGPT can be integrated with stock market data using application programing interfaces (APIs) 
+FinGPT is a small Python application leveraging OpenAI's GPT-4 to provide financial analysis and stock market information. By entering the symbol for an equity, e.g. MSFT, AAPL etc, users receive detailed insights, including market analysis, historical performance, and predictive trends. The application is intended as a prototype to learn how ChatGPT can be integrated with stock market data using application programing interfaces (APIs). 
 
 ## Table of Contents
 - Installation
@@ -14,8 +14,9 @@ Before installation, ensure you have Python (version 3.8 or newer) installed on 
 
 **Clone the Repository**
 
-git clone https://github.com/yourusername/FinGPT.git
-cd FinGPT
+git clone https://github.com/nbk5876/nbk5876.github.io/tree/main/GPT_Fin
+
+cd nbk5876.github.io/GPT_Fin
 
 **Setup a Virtual Environment**
 
@@ -50,7 +51,6 @@ Create a Branch - Create a new branch for your feature or fix.
 Submit a Pull Request - Once your changes are ready, submit a pull request for review.
 
 Please ensure your code adheres to the project's coding standards and includes appropriate tests. For more information, see the CONTRIBUTING.md file in the repository.
-
 
 ## License
 
