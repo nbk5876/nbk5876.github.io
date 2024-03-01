@@ -3,6 +3,8 @@
 ## Project Title
 FinGPT is a small Python application leveraging OpenAI's GPT-4 to provide financial analysis and stock market information. By entering the symbol for an equity, e.g. MSFT, AAPL etc, users receive detailed insights, including market analysis, historical performance, and predictive trends. The application is intended as a prototype to learn how ChatGPT can be integrated with stock market data using application programing interfaces (APIs). 
 
+![Example Image](/image/FinGpt-Prototype-Concept-Diagram.png "FinGPT Overview Flow")
+
 ## Table of Contents
 - Installation
 - Usage
