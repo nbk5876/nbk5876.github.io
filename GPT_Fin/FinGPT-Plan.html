@@ -25,26 +25,23 @@ Github Project Folder</a></h2>
 	<li>Step 1 - Get natural language query from the user. For example, "What is the 
 	Price-to-Earnings ratio for Microsoft?" 	</li>
 	<li>Step 2- Fetch current financial data from the Web: The system retrieves the latest data from the internet using APIs or scraping techniques. (<a href="alphavantage-returned-data-sample.html">Example API Return Value</a>)
-
 	</li>
+
 	<li>Step 3- Data structuring and, optional, lightweight local data caching: 
 	This is an optional step where the system may cache the retrieved data locally to improve performance and reduce the need for repeated data fetching. 
 	Maybe implement this in a later phase.
-
 	</li>
+
 	<li>Step 4 - Resolve NLP (natural language processing) query using OpenAI API's:&nbsp; The system sends the user's query 
 	together with retrieved financial data to the OpenAI API, which processes the query using the GPT LLM model.
-
 	</li>
+
 	<li>Step 5 - Send results back to the user: Finally, the system presents the OpenAI API's response 
 	back to the user.
 	</li>
 </ul>
 
 <img src="image/FinGpt-Prototype-Flow-Diagram.png" alt="FinGPT High Level Flow">
-
-
-
 
 <h1>FinGPT Dev Plan</h1>
 <ol>
