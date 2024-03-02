@@ -44,7 +44,7 @@ def process_query(user_query, structured_data):
     """
 
     # Format a message that includes the P/E ratio information from Alpha Vantage
-    detailed_description = (f"According to Alpha Vantage, the current Price-to-Earnings ratio for {company_name} is {pe_ratio}. Profit Margin is {profit_margin}. Market Capitalization is {market_cap}. The current stock price is {current_price} and the target price is {target_price}. "
+    detailed_description = (f"According to Alpha Vantage (https://www.alphavantage.co/), the current Price-to-Earnings ratio for {company_name} is {pe_ratio}. Profit Margin is {profit_margin}. Market Capitalization is {market_cap}. The current stock price is {current_price} and the target price is {target_price}. "
         "Can you provide a financial analysis based on these data points? Are there areas where the company is struggling?"
     )
 
