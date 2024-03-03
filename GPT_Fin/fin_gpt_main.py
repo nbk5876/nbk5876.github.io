@@ -24,7 +24,6 @@ def main():
 
     print(user_query)
 
-    symbol = 'BA'
     symbol = 'NTAP'
     symbol = 'F'
     symbol = 'SOFI'
@@ -32,6 +31,7 @@ def main():
     symbol = 'GOVT'
     symbol = 'CPB'
     symbol = 'ASX'
+    symbol = 'BA'
     
     company_overview_data = fetch_financial_data(symbol)  # Contains P/E ratio, Market Cap, etc.
     current_stock_price = fetch_current_stock_price(symbol)  # Contains the current stock price
