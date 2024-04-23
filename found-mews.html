@@ -1,4 +1,9 @@
 ﻿<!DOCTYPE html>
+<!-- -------------------------------------------------------------
+   Name: found-mews.html
+   Purpose: This page points to Posts on a social media site
+
+--------------------------------------------------------------- -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +28,7 @@
         }
 
         .header-image {
-            width: 100%;  /* This will make the image responsive, i.e., it will scale with the width of the screen */
+            width: 100%;  /* This will scale the image with the width of the screen */
             max-height: 250px; /* This will ensure that the image is not too tall */
             object-fit: contain; /* This will cover the area without distorting the image */
             height: auto;
@@ -66,7 +71,9 @@
     <header>
         <!-- <h1>Found My Mews</h1> -->
 
+        <!-- <img class="header-image" src="" alt="Found My Mews"> -->
         <img class="header-image" src="image\catmew-Touching-reunion-3.png" alt="Found My Mews">
+
 
     </header>
 
@@ -101,5 +108,41 @@
 
         </p>
     </footer>
+
+
+    <script>
+        // Function to get query parameters by name
+        function getQueryParam(name) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(window.location.href);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Use the function to get the 'img' query parameter
+        var imageName = getQueryParam('img');
+        var imagePath = '';
+
+        // Set the image path based on the 'img' query parameter
+        switch (imageName) {
+            case 'alt':
+                imagePath = 'image/catmew-blank.png'; // Path to the alternate image
+                break;
+            case null:
+                imagePath = 'image/catmew-Touching-reunion-3.png'; // Path to the default image
+                break;
+            default:
+                imagePath = 'image/catmew-Touching-reunion-3.png'; // Default image if unexpected value is provided
+        }
+
+        // Set the image source
+        document.getElementById('headerImage').src = imagePath;
+    </script>
+
+
+
+
 </body>
 </html>
