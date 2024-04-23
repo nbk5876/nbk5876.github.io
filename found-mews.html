@@ -109,37 +109,32 @@
         </p>
     </footer>
 
+<script>
+    // Function to get query parameters by name
+    function getQueryParam(name) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(window.location.href);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
 
-    <script>
-        // Function to get query parameters by name
-        function getQueryParam(name) {
-            name = name.replace(/[\[\]]/g, '\\$&');
-            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(window.location.href);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
+    // Use the function to get the 'img' query parameter
+    var imageName = getQueryParam('img');
+    console.log('imageName:', imageName); // This should log 'alt'
 
-        // Use the function to get the 'img' query parameter
-        var imageName = getQueryParam('img');
-        var imagePath = '';
+    // Decide which image to show based on the 'img' query parameter
+    var imagePath = 'image/catmew-Touching-reunion-3.png'; // default image path
+    if (imageName === 'alt') {
+        imagePath = 'image/catmew-blank.png'; // alternative image path
+    }
 
-        // Set the image path based on the 'img' query parameter
-        switch (imageName) {
-            case 'alt':
-                imagePath = 'image/catmew-blank.png'; // Path to the alternate image
-                break;
-            case null:
-                imagePath = 'image/catmew-Touching-reunion-3.png'; // Path to the default image
-                break;
-            default:
-                imagePath = 'image/catmew-Touching-reunion-3.png'; // Default image if unexpected value is provided
-        }
+    console.log('imagePath:', imagePath); // This should log the path that will be used
 
-        // Set the image source
-        document.getElementById('headerImage').src = imagePath;
-    </script>
+    // Set the image source
+    document.getElementById('headerImage').src = imagePath;
+</script>
 
 
 
