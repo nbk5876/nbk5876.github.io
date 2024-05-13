@@ -1,7 +1,27 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        img.responsive {
+            width: 100%; /* Ensures it takes the full width of the container */
+            height: auto; /* Maintains the aspect ratio */
+        }
+
+        /* Optional: Specific styles for larger screens */
+        @media (min-width: 768px) {
+            img.responsive {
+                /* This will still take the full width of the container */
+            }
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages</p>
+    <img src="core3_pnw.png" alt="Stunning view of a landscape with CORE 3 logo" class="responsive">
 </body>
 </html>
